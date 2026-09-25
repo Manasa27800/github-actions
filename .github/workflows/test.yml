@@ -1,0 +1,12 @@
+name: test
+
+on: # trigger
+  workflow_call:
+
+jobs:
+  code-checkout:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: test the code
+        run: echo "code test using Sonar / Pytest"
