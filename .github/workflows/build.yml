@@ -1,0 +1,12 @@
+name: build
+
+on: # trigger
+  workflow_call:
+
+jobs:
+  code-checkout:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: build the code
+        run: echo "code build using docker"
