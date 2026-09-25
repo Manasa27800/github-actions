@@ -1,0 +1,12 @@
+name: deploy
+
+on: # trigger
+  workflow_call:
+
+jobs:
+  code-checkout:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: deploy the code
+        run: echo "code deployed to AWS EC2 instance"
