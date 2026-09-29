@@ -1,12 +1,18 @@
 name: deploy
 
-on: # trigger
+on:
   workflow_call:
 
 jobs:
   code-checkout:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
+      - name: clone code
+        uses: actions/checkout@v4
+
+      - name: deploy via nginx
+        run: cp index.html /var/www/html/
+
       - name: deploy the code
         run: echo "code deployed to AWS EC2 instance"
